@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: {{ include "zeebe-cluster-k8s-helm.fullname" . }}
   labels:
-{{ include "zeebe-cluster-k8s-helm.labels" . | indent 4 }}
+{{- toYaml  .Values.labels | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
