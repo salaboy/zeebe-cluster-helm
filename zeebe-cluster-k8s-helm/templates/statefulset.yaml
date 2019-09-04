@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ include "zeebe-cluster-k8s-helm.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
-  serviceName: zeebe
+  serviceName: {{ include "zeebe-cluster-k8s-helm.fullname" . }}
   updateStrategy:
     type: RollingUpdate
   podManagementPolicy: Parallel
