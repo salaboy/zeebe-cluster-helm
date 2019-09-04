@@ -16,6 +16,8 @@ labels:
   app: zeebe  
 service:
   type: ClusterIP
+  http:
+    port: 9600
   gateway:
     port: 26500
   command:

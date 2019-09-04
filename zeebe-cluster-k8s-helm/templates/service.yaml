@@ -5,12 +5,23 @@ metadata:
   labels:
 {{ include "zeebe-cluster-k8s-helm.labels" . | indent 4 }}
 spec:
+  clusterIP: None
+  publishNotReadyAddresses: true
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+  - port: {{ .Values.service.http.port }}
       protocol: TCP
-      name: http
+      name: http  
+  - port: {{ .Values.service.gateway.port }}
+      protocol: TCP
+      name: gateway
+  - port: {{ .Values.service.command.port }}
+      protocol: TCP
+      name: command
+  - port: {{ .Values.service.internal.port }}
+      protocol: TCP
+      name: internal  
   selector:
     app.kubernetes.io/name: {{ include "zeebe-cluster-k8s-helm.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
+    app: zeebe
