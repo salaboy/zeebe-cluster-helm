@@ -10,6 +10,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ include "zeebe-cluster-k8s-helm.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
+      app: zeebe
   serviceName: {{ include "zeebe-cluster-k8s-helm.fullname" . }}
   updateStrategy:
     type: RollingUpdate
@@ -19,6 +20,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "zeebe-cluster-k8s-helm.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        app: zeebe
     spec:
       terminationGracePeriodSeconds: 10
       containers:
