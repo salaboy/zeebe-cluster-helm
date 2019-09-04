@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 3
-javaOpts: |
+JavaOpts: |
   -XX:+UnlockExperimentalVMOptions
   -XX:+UseCGroupMemoryLimitForHeap
   -Xms1024m
