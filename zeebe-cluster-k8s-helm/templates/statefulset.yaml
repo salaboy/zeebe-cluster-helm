@@ -69,14 +69,13 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: zeebe-config
+          name: {{ include "zeebe-cluster-k8s-helm.fullname" . }}
           defaultMode: 0744
   volumeClaimTemplates:
   - metadata:
       name: data
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: zeebe-regional
       resources:
         requests:
           storage: 5Gi
