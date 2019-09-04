@@ -9,7 +9,7 @@ spec:
   publishNotReadyAddresses: true
   type: {{ .Values.service.type }}
   ports:
-  - port: {{ .Values.service.http.port }}
+  - port: 9600
       protocol: TCP
       name: http  
   - port: {{ .Values.service.gateway.port }}
