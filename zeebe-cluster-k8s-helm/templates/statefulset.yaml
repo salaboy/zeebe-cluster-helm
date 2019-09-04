@@ -35,7 +35,8 @@ spec:
         - name: ZEEBE_REPLICATION_FACTOR
           value: "3"
         - name: JAVA_TOOL_OPTIONS
-          value: {{ .Values.JavaOpts }}
+          value: 
+           {{- toYaml .Values.JavaOpts | nindent 12}}
         ports:
         - containerPort: 9600
           name: http
