@@ -9,16 +9,16 @@ spec:
   publishNotReadyAddresses: true
   type: {{ .Values.service.type }}
   ports:
-  - port: 9600
+    - port: {{ .Values.service.http.port }}
       protocol: TCP
       name: http  
-  - port: {{ .Values.service.gateway.port }}
+    - port: {{ .Values.service.gateway.port }}
       protocol: TCP
       name: gateway
-  - port: {{ .Values.service.command.port }}
+    - port: {{ .Values.service.command.port }}
       protocol: TCP
       name: command
-  - port: {{ .Values.service.internal.port }}
+    - port: {{ .Values.service.internal.port }}
       protocol: TCP
       name: internal  
   selector:
