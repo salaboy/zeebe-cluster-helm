@@ -46,10 +46,6 @@ spec:
           name: command
         - containerPort: 26502
           name: internal
-        livenessProbe:
-          httpGet:
-            path: /ready
-            port: http
         readinessProbe:
           httpGet:
             path: /ready
