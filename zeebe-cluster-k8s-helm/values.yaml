@@ -4,7 +4,7 @@
 
 elasticsearch:
   imageTag: 6.8.1
-  replicas: 1
+  replicas: 3
 kibana:
   imageTag: 6.8.1
 
