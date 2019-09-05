@@ -2,6 +2,12 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+elasticsearch:
+  imageTag: 6.8.1
+  replicas: 1
+kibana:
+  imageTag: 6.8.1
+
 replicaCount: 3
 JavaOpts: |
   -XX:+UnlockExperimentalVMOptions
