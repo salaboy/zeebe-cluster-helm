@@ -10,7 +10,7 @@ init:
 
 setup: init
 	helm repo add jenkins-x http://chartmuseum.jenkins-x.io
-        helm repo add elastic http://helm.elastic.co
+	helm repo add elastic http://helm.elastic.co
 	helm repo add releases ${CHART_REPO}
 
 build: clean setup
