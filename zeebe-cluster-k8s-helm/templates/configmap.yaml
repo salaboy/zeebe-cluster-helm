@@ -318,7 +318,7 @@ data:
     id = "elasticsearch"
     className = "io.zeebe.exporter.ElasticsearchExporter"
       [exporters.args]
-      url = "http://elasticsearch.zeebe:9200"
+      url = "http://elasticsearch:9200"
 
       [exporters.args.bulk]
       delay = 5
